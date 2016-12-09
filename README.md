@@ -12,10 +12,21 @@ The Trust Engine can be invoked in a SaaS manner by:
 -	an application that runs on the client side (for instance a communication application);
 -	a service that runs on a network-based infrastructure (for instance the Discovery service).
 
-The basic REST API are:
+The basic REST APIs are:
 - _getTrustInfo_ to get information about the trustworthiness of an Identity (userID or GUID)
 - _addToWhiteList_ to add a contact (identified by userID or GUID) to user's white list
 - _addToBlackList_ to add a contact (identified by userID or GUID) to user's black list
+
+These 3 APIs take as input the GUID of the user whose accont is considered, and the userID of the peer whose trustworthiness is at stake.
+
+The _getTrustInfo_ API returns:
+
+| value | result          |
+|------:|-----------------|
+|  -1   | unknown GUID    |
+|   0   | unlisted URL    |
+|   1   | blacklisted URL |
+|   2   | whitelisted URL |
 
 _NB. Obviously the same identifier may not be on both white- and blacklist of the same user!_
 
