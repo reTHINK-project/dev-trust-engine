@@ -17,7 +17,9 @@ The basic REST APIs are:
 - _addToWhiteList_ to add a contact (identified by userID or GUID) to user's white list
 - _addToBlackList_ to add a contact (identified by userID or GUID) to user's black list
 
-These 3 APIs take as input the GUID of the user whose accont is considered, and the userID of the peer whose trustworthiness is at stake.
+These 3 APIs take 2 parameters as input:
+- the GUID of the user whose accont is considered,
+- the userID of the peer whose trustworthiness is at stake.
 
 The _getTrustInfo_ API returns:
 
